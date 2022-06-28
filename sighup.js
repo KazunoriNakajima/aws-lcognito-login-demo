@@ -1,7 +1,7 @@
 // ユーザープールの設定
 const poolData = {
-  UserPoolId: [us-west-1_TypcBHjXD],
-  ClientId: [2j8sph46neeg7hmflni9537a3h],
+  UserPoolId: "us-west-1_TypcBHjXD",
+  ClientId: "2j8sph46neeg7hmflni9537a3h",
 };
 const userPool = new AmazonCognitoIdentity.CognitoUserPool(poolData);
 
@@ -12,9 +12,9 @@ var attributeList = [];
  */
 $(document).ready(function () {
   // Amazon Cognito 認証情報プロバイダーの初期化
-  AWSCognito.config.region = "ap-northeast-1"; // リージョン
+  AWSCognito.config.region = "us-west-1"; // リージョン
   AWSCognito.config.credentials = new AWS.CognitoIdentityCredentials({
-    IdentityPoolId: [arn:aws:cognito-idp:us-west-1:845339839545:userpool/us-west-1_TypcBHjXD],
+    IdentityPoolId: "us-west-1:a8c64af8-2540-4001-9cb1-cfdc95bbecea",
   });
 
   // 「Create Account」ボタン押下時
