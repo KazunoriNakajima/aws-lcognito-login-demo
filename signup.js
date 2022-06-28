@@ -5,7 +5,7 @@ const poolData = {
 };
 const userPool = new AmazonCognitoIdentity.CognitoUserPool(poolData);
 
-var attributeList = [];
+let attributeList = [];
 
 /**
  * 画面読み込み時の処理
@@ -26,11 +26,11 @@ $(document).ready(function () {
 /**
  * サインアップ処理。
  */
-var signUp = function () {
-  var username = $("#email").val();
-  var lastName = $("#lastName").val();
-  var firstName = $("#firstName").val();
-  var password = $("#password").val();
+let signUp = function () {
+  let username = $("#email").val();
+  let lastName = $("#lastName").val();
+  let firstName = $("#firstName").val();
+  let password = $("#password").val();
 
   // 何か1つでも未入力の項目がある場合、処理終了
   if (!username | !lastName | !firstName | !password) {
@@ -38,18 +38,18 @@ var signUp = function () {
   }
 
   // ユーザ属性リストの生成
-  var dataFamilyName = {
+  let dataFamilyName = {
     Name: "family_name",
     Value: lastName,
   };
-  var dataGivenName = {
+  let dataGivenName = {
     Name: "given_name",
     Value: firstName,
   };
-  var attributeFamilyName = new AmazonCognitoIdentity.CognitoUserAttribute(
+  let attributeFamilyName = new AmazonCognitoIdentity.CognitoUserAttribute(
     dataFamilyName
   );
-  var attributeGivenName = new AmazonCognitoIdentity.CognitoUserAttribute(
+  let attributeGivenName = new AmazonCognitoIdentity.CognitoUserAttribute(
     dataGivenName
   );
 
